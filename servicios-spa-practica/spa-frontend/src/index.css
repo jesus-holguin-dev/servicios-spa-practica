@@ -1,0 +1,545 @@
+/* ====== RESET BÁSICO / TIPOGRAFÍA ====== */
+@import url("https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #f6f0e9;
+  --color-primary: #0f6f4f; /* verde barrita superior */
+  --color-text-main: #333333;
+  --color-text-muted: #666666;
+  --color-accent: #b38b5a;
+  --max-width: 1100px;
+  font-family: "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Antic Slab", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background-color: #f5f2ea; /* o el color que ya tenías */
+  color: #222;
+}
+
+/* Para que el layout ocupe toda la pantalla */
+#root {
+  min-height: 100vh;
+}
+
+/* ====== SHELL GENERAL ====== */
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-shell main {
+  flex: 1;
+}
+
+/* Contenedor central (simula el ancho de tu maqueta) */
+.page-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+/* ====== HEADER ====== */
+
+.spa-header {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.spa-header__topbar {
+  height: 25px;
+  background: #9fd8c0;
+}
+
+/* fila principal */
+.spa-header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.spa-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spa-header__logo-img {
+   width: auto;       /* ajústalo según tu logo */
+   height: 65px;
+  object-fit: contain;
+  border-radius: 50%;  /* quítalo si tu logo no es circular */
+}
+
+/* texto de marca */
+.spa-header__brand-lines {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.spa-header__brand-main {
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.spa-header__brand-sub {
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* título centrado (Servicios / Masajes, etc.) */
+.spa-header__page-title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   FOOTER – Dreams Kingdom Spa
+========================================= */
+
+.spa-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 3rem;
+  font-family: "Antic Slab", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #333333;
+}
+
+.spa-footer__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/* --- Botones de redes (se quedan como te gustaron) --- */
+
+.spa-footer__social-row {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.spa-footer__social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  background: #ffffff;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #a48f5c; /* tono dorado-suave */
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.spa-footer__social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 26px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Texto de información (estilo limpio tipo maqueta) --- */
+
+.spa-footer__info {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  gap: 4rem;
+  font-size: 0.85rem;
+}
+
+.spa-footer__info-title {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: #333333;
+}
+
+.spa-footer__info-text {
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* Línea inferior con copyright */
+
+.spa-footer__bottom {
+  border-top: 1px solid #f0f0f0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777777;
+  padding: 0.9rem 1rem 1.2rem;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 900px) {
+  .spa-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem 1.5rem;
+  }
+
+  .spa-footer__info {
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .spa-footer__social-row {
+    justify-content: flex-start;
+  }
+
+  .spa-footer__info {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* ====== TÍTULOS DE PÁGINA (para el contenido) ====== */
+
+.page-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 1.8rem 0 0.35rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-subtitle {
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+}
+
+/* ====== GRID DE CATEGORÍAS ====== */
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.category-card {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.category-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Mantener relación de aspecto parecida a tus mockups */
+.category-card__image-wrapper::before {
+  content: "";
+  display: block;
+  padding-bottom: 65%; /* ~3:2 */
+}
+
+.category-card__image-wrapper img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+/* Capa oscura sutil */
+.category-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* Nombre de la categoría abajo a la izquierda */
+.category-card__name {
+  position: absolute;
+  left: 1rem;
+  bottom: 0.8rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+}
+
+/* Hover: un poco gris + zoom leve */
+.category-card:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0.3);
+}
+
+.category-card:hover .category-card__overlay {
+  opacity: 1;
+}
+
+/* ====== RESPONSIVE ====== */
+
+@media (max-width: 768px) {
+  .spa-header__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .spa-header__page-title {
+    order: 3;
+    width: 100%;
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+  }
+
+  .page-container {
+    padding-inline: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .spa-footer__info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====== BOOKING / RESERVA ====== */
+
+.booking-page {
+  padding: 40px 70px;
+  background: #f5efe3;
+}
+
+.booking-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+  gap: 40px;
+}
+
+/* Columna izquierda */
+.booking-left {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 25px 30px;
+}
+
+.booking-field {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-field label {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.booking-field input[type="text"],
+.booking-field input[type="date"],
+.booking-field select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.booking-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+}
+
+.booking-checkbox input[type="checkbox"] {
+  transform: scale(1.1);
+}
+
+/* Lista de servicios en la izquierda */
+.booking-services-list {
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #faf7f2;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.booking-service-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.booking-service-item .service-name {
+  font-weight: 500;
+}
+
+.booking-service-item .service-price {
+  font-weight: 600;
+}
+
+/* Mensaje de disponibilidad */
+.disponibilidad-message {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.disponibilidad-message.ok {
+  background: #e3f7e5;
+  border: 1px solid #5bbf6a;
+  color: #216331;
+}
+
+.disponibilidad-message.error {
+  background: #fde8e8;
+  border: 1px solid #f28b82;
+  color: #b3261e;
+}
+
+/* Botones en fila */
+.booking-buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn-secondary,
+.btn-outline {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #b49a79;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-secondary {
+  background: #e9dfcf;
+}
+
+.btn-outline {
+  background: #ffffff;
+}
+
+.btn-secondary:hover,
+.btn-outline:hover {
+  filter: brightness(0.97);
+}
+
+/* Reutilizamos .btn-primary de antes, sólo por si acá se usa distinto */
+.booking-buttons-row .btn-primary {
+  flex: 1;
+  max-width: 220px;
+}
+
+/* Columna derecha: resumen */
+.booking-right {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 25px 30px;
+}
+
+.booking-right h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.booking-summary-box {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.summary-total {
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.summary-extra {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .booking-page {
+    padding: 25px 15px;
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+}

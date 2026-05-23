@@ -1,0 +1,216 @@
+/* ============ PÁGINA DE SERVICIOS POR CATEGORÍA ============ */
+
+.category-page {
+  padding: 40px 70px;
+  background: #f5efe3;
+}
+
+/* TÍTULO SUPERIOR (MASAJES, ETC.) */
+.category-title {
+  font-size: 45px;
+  color: #2c2c2c;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* HERO: IMAGEN IZQUIERDA + DESCRIPCIÓN DERECHA */
+.category-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.category-main-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.category-description-box {
+  background: #eae4db;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #444;
+}
+
+/* BARRA CON “SELECCIONA EL TRATAMIENTO” + BOTÓN */
+.category-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 35px 0 20px;
+}
+
+.category-header-bar h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.btn-volver {
+  background: #b49a79;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* TARJETA BLANCA QUE CONTIENE LA TABLA */
+.category-services-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 20px 24px 18px;
+}
+
+/* Wrapper por si la tabla necesita scroll horizontal en móviles */
+.category-services-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* TABLA PRINCIPAL */
+.category-services-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 700px; /* para que las columnas mantengan proporción */
+}
+
+.category-services-table thead th {
+  font-weight: 600;
+  font-size: 16px;
+  color: #3b3b3b;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 6px;
+}
+
+/* Anchos de columnas */
+.category-services-table thead th:nth-child(1),
+.category-services-table tbody td:nth-child(1) {
+  width: 55%;
+  text-align: left;
+}
+
+.category-services-table thead th:nth-child(2),
+.category-services-table tbody td:nth-child(2) {
+  width: 15%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.category-services-table thead th:nth-child(3),
+.category-services-table tbody td:nth-child(3) {
+  width: 15%;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.category-services-table thead th:nth-child(4),
+.category-services-table tbody td:nth-child(4) {
+  width: 15%;
+  text-align: center;
+}
+
+/* Filas del cuerpo */
+.category-services-table tbody td {
+  padding: 10px 6px;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Columna "Servicio": nombre + descripción */
+.cat-service-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cat-service-desc {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Columnas de duración, precio y cantidad */
+.cat-col-duracion {
+  font-size: 15px;
+  color: #444;
+}
+
+.cat-col-precio {
+  font-size: 15px;
+  color: #444;
+}
+
+.cat-col-cantidad {
+  text-align: center;
+}
+
+/* Controles de cantidad */
+.cat-qty-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cat-qty-btn {
+  width: 32px;
+  height: 28px;
+  border: 1px solid #b2b2b2;
+  background: #f4f4f4;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cat-qty-btn:focus {
+  outline: none;
+}
+
+.cat-qty-value {
+  min-width: 32px;
+  text-align: center;
+  border-top: 1px solid #b2b2b2;
+  border-bottom: 1px solid #b2b2b2;
+  background: #ffffff;
+  padding: 3px 6px;
+  box-sizing: border-box;
+}
+
+/* Pie de la tarjeta: botón grande */
+.category-services-footer {
+  margin-top: 18px;
+}
+
+.category-add-to-cart-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 900px) {
+  .category-page {
+    padding: 25px 15px;
+  }
+
+  .category-hero {
+    grid-template-columns: 1fr;
+  }
+
+  /* En móviles que la tabla sea desplazable horizontalmente */
+  .category-services-table {
+    min-width: 600px;
+  }
+}
